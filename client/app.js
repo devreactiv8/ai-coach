@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // API configuration
         apiConfig: {
-            endpoint: 'http://localhost:3000/api/chat', // Replace with your deployed backend URL
+            endpoint: 'https://ai-coach-on35.onrender.com',
             headers: {
                 'Content-Type': 'application/json'
             }
