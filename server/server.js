@@ -5,11 +5,11 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000' // Or your Netlify/Vercel URL
+    origin: process.env.CORS_ORIGIN
 }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client')));
