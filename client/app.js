@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // API configuration
         apiConfig: {
-            endpoint: 'https://ai-coach-on35.onrender.com',
+            endpoint: 'https://ai-coach-on35.onrender.com/api/chat',
             headers: {
                 'Content-Type': 'application/json'
             }
