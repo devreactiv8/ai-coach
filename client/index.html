@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Accountability Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+      
+        .bg-blue-600, .bg-blue-700, .bg-blue-500, .border-blue-200, .text-blue-500, .bg-blue-600:hover, .bg-blue-700:hover {
+           
+            border-color: #7c7057 !important;
+            color: #fff !important;
+        }
+        .border-blue-200 {
+            border-color: #7c7057 !important;
+        }
+        .text-blue-500 {
+            color: #7c7057 !important;
+        }
+        .bg-blue-500 {
+            background-color: #7c7057 !important;
+        }
+        .bg-blue-600 {
+            background-color: #7c7057 !important;
+        }
+        .bg-blue-700 {
+            background-color: #6b604b !important; /* Slightly darker for hover */
+        }
+        .bg-blue-600:hover, .bg-blue-700:hover {
+            background-color: #6b604b !important;
+        }
+    </style>
+</head>
+<body class="h-full font-['Inter'] overflow-hidden bg-gray-50">
+    <div class="container mx-auto h-full flex flex-col max-w-3xl p-4">
+
+        <header class="border-b border-blue-200 pb-4 mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 text-center">
+                <span class="text-brown-600">Daily</span> Accountability Coach
+            </h1>
+            <p class="text-gray-500 text-center text-sm mt-2">
+                Stay focused and achieve your goals
+            </p>
+            <div class="flex justify-between items-center mt-4 text-xsq text-gray-500">
+                <div id="session-counter" class="flex items-center">
+                    <span class="inline-block w-3 h-3 rounded-full bg-blue-500 mr-2"></span>
+                    <span>Messages today: <span id="session-count" class="font-medium">0</span>/10</span>s
+                </div>
+                <div id="streak-counter">
+                    <span>Day streak: <span id="streak-days" class="font-medium">0</span></span>
+                </div>
+                <div id="system-status" class="text-blue-500 font-medium">
+                    Active
+                </div>
+            </div>
+        </header>
+
+
+        <div id="chat-container" class="flex-1 overflow-y-auto mb-4 space-y-4 pr-2 custom-scrollbar">
+            
+            <div class="animate-fade-in">
+                <div class="text-gray-500 text-xs mb-1">Coach</div>
+                <div class="bg-white rounded-lg p-4 text-gray-800 shadow-sm border border-gray-200">
+                    <p class="font-semibold">Welcome to your accountability session!</p>
+                    <p>You have 10 daily check-ins available. Let's make today productive. What's your current focus?</p>
+                </div>
+            </div>
+            <!-- Typing animation placeholder -->
+            <div id="typing-indicator" class="hidden animate-fade-in">
+                <div class="flex items-center space-x-2">
+                    <span class="inline-block w-2 h-2 bg-[#7c7057] rounded-full animate-bounce"></span>
+                    <span class="inline-block w-2 h-2 bg-[#7c7057] rounded-full animate-bounce delay-150"></span>
+                    <span class="inline-block w-2 h-2 bg-[#7c7057] rounded-full animate-bounce delay-300"></span>
+                    <span class="text-xs text-gray-500 ml-2">Coach is typing...</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+            <textarea 
+                id="user-input" 
+                rows="3" 
+                class="w-full bg-white text-gray-800 p-4 focus:outline-none resize-none placeholder-gray-400 rounded-lg"
+                placeholder="What are you working on today?"></textarea>
+            <div class="flex justify-between items-center p-3 border-t border-gray-100">
+                <div class="text-xs text-gray-500">
+                    <span id="character-count">0</span>/500 characters
+                </div>
+                <button 
+                    id="send-button" 
+                    class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-medium"
+                    disabled>
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <div id="session-limit-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg p-6 max-w-md mx-4 shadow-xl">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Daily Limit Reached</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    You've used all 10 messages for today. Great job staying accountable! 
+                    Come back tomorrow to continue your progress.
+                </p>
+                <button id="close-modal" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-all font-medium">
+                    Got it
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
